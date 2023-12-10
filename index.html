@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Web App</title>
+  <style>
+    body {
+      font-family: 'Helvetica', sans-serif;
+      color: #333333; /* Dark gray text */
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9; /* Light neutral background */
+      line-height: 1.6;
+      font-size: 16px; /* Increased base font size for better readability */
+    }
+    section {
+      max-width: 80%;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background-color: #fff; /* White background for sections */
+    }
+    h1{
+      text-align: center;
+      color: #333333; /* Dark gray for headers */
+      margin: 20px 0;
+      font-size: 2.5em; /* Larger font size for headers */
+    }
+    h2.mini-heading {
+      font-size: 0.8em; /* Smaller font size */
+      text-align: left; /* Left-justified text */
+      margin: 10px 0; /* Adjust margin as needed */
+    }
+    p {
+      font-size: 18px; /* Increased font size for paragraphs */
+    }
+    /* Center the visualization */
+    .tableauPlaceholder {
+      margin: 20px auto;
+      max-width: 1000px;
+    }
+    /* #Viz3 {
+      max-width: 80%;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background-color: #fff; /* White background for sections */
+    /* } */ 
+  </style>
+</head>
+<body>
+    <h1>CS448B Final Project: Health Violations in NYC Restaurants</h1>
+    <h2 style="text-align: center;">Date: December 10, 2023 | Lauren Taylor</h2>
+    <section id="introduction">
+      <p>The New York City Department of Health and Mental Hygiene (NYC DOHMH) conducts annual random inspections for over 27,000 restaurants within the city. This extensive dataset, publicly available since 2016, encompasses inspection records from January 2019 to November 2023. The dataset is structured with each violation recorded separately, resulting in multiple entries per inspection.</p>
+      <p>Since 2010, DOHMH has implemented a grading system following inspections, assigning letter grades&mdash;&ldquo;A&rdquo;, &ldquo;B&rdquo;, or &ldquo;C&rdquo;&mdash;based on a point system linked to identified violations. Inspectors evaluate various aspects of a restaurant, tallying points that determine the final grade:</p>
+      <p style="text-align: center;">A: 0-13 points</p>
+      <p style="text-align: center;">B: 14-27 points</p>
+      <p style="text-align: center;">C: 28 or more points</p>
+      <p>These grades must be prominently displayed for public view, serving as an indicator of a restaurant&apos;s compliance with health standards.</p>
+      <p>Moreover, critical violations, such as issues with pest control, meat storage, and other immediate health risks, can prompt re-inspections or immediate closure, based on the discretion of the inspector, without a predefined point threshold for closure.</p>
+      <p>The inspection process has faced scrutiny, particularly regarding its potential bias against small and ethnic businesses. One central inquiry revolves around whether this system discriminates against certain establishments.</p>
+      <p>Delving into the grading system reveals a distinct trajectory for restaurants based on their received grade. While an &ldquo;A&rdquo; concludes the inspection process for the year, grades of &ldquo;B&rdquo; or &ldquo;C&rdquo; necessitate re-inspection, often within a week. Notably, lower grades mandate immediate display outside the restaurant, potentially impacting its reputation. This difference in treatment could influence both inspectors, striving to minimize lower grades, and restaurants, keen to avoid public display of subpar ratings.</p>
+      <p>This dynamic might incentivize inspectors to navigate the borderline of scoring, possibly omitting minor violations to secure a restaurant&apos;s score within the higher bracket, for instance, registering a score of 13 for an &ldquo;A&rdquo; instead of a 14 for a &ldquo;B&rdquo;.</p>
+      <p>Examining the distribution of inspection scores from 2019 to 2023 across popular cuisines uncovers intriguing trends. Nearly 20.76% of all inspection scores fall within the 12-13 range, conveniently skirting the &ldquo;B&rdquo; grade category &ndash; this is a substantial portion of evaluations, and seems a bit unlikely to have happened by chance.&nbsp;</p>
+      <p>Notably, disparities emerge among cuisines regarding these borderline scores. Certain cuisines like American, French, and Italian restaurants exhibit an above-average frequency of scores within this critical range, potentially benefiting from the benefit-of-the-doubt leniency. In contrast, cuisines such as Chinese, Indian, Mexican, and Thai restaurants show lower rates in this range, raising questions about potential differential treatment during inspections.</p>
+    </section>
+    <section id="Viz1">
+      <div class='tableauPlaceholder' id='viz1702072315872' style='position: relative; margin: 0 auto; width: 80%; max-width: 1000px;'>
+        <noscript>
+          <a href='#'>
+            <img alt='borderline' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;bo&#47;borderline&#47;borderline&#47;1_rss.png' style='border: none' />
+          </a>
+        </noscript>
+        <object class='tableauViz' style='display:none;' width='1000' height='827'>
+          <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+          <param name='embed_code_version' value='3' />
+          <param name='site_root' value='' />
+          <param name='name' value='borderline&#47;borderline' />
+          <param name='tabs' value='no' />
+          <param name='toolbar' value='yes' />
+          <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;bo&#47;borderline&#47;borderline&#47;1.png' />
+          <param name='animate_transition' value='yes' />
+          <param name='display_static_image' value='yes' />
+          <param name='display_spinner' value='yes' />
+          <param name='display_overlay' value='yes' />
+          <param name='display_count' value='yes' />
+          <param name='language' value='en-US' />
+          <param name='filter' value='publish=yes' />
+        </object>
+      </div>
+      <!-- <script type='text/javascript'>
+        var divElement = document.getElementById('viz1702072315872');
+        var vizElement = divElement.getElementsByTagName('object')[0];
+        if (divElement.offsetWidth > 800) {
+          vizElement.style.width = '1000px';
+          vizElement.style.height = '827px';
+        } else if (divElement.offsetWidth > 500) {
+          vizElement.style.width = '1000px';
+          vizElement.style.height = '827px';
+        } else {
+          vizElement.style.width = '100%';
+          vizElement.style.height = '1127px';
+        }
+        var scriptElement = document.createElement('script');
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+      </script> -->
+    </section>
+    <section id="Viz2">
+      <p>Examining the impact of shut-downs by the NYC Department of Health and Mental Hygiene (NYC DOHMH) reveals significant implications for a restaurant&apos;s reputation and financial stability. While warranted for establishments posing health risks, the consistency in evaluation criteria across cuisines and business sizes warrants investigation.</p>
+      <p>Unlike the clear point-based grading system, there&apos;s no predefined score threshold leading to restaurant shut-downs. Instead, it relies on the discretion of inspectors, raising concerns about potential inconsistencies in their judgments.</p>
+      <p>Exploring this across different cuisines and business sizes sheds light on intriguing patterns. For instance, considering the distinction between chain restaurants&mdash;those with multiple NYC locations&mdash;and independent ones (those with only one or two locations), disparities in shut-down criteria become apparent.</p>
+      <p>A closer look at the data reveals that, on average, a Chinese restaurant faced closure upon accumulating just over 50 violation points in a single inspection. In contrast, the threshold for chain coffee restaurants to face shut-down was significantly higher, with closures occurring when the violation count exceeded 70 points on average.</p>
+      <p>The discrepancy extends further when examining the frequency of shut-downs. Approximately 9.5% of inspections for independent Chinese restaurants resulted in shut-downs, while merely 1% of inspections for chain coffee shops faced the same fate.</p>
+      <p>This disparity in shut-down thresholds and frequency between cuisines and business sizes sparks questions about potential biases or differing evaluation standards across different restaurant types. The implications of such variations could impact the fairness and consistency of inspections, potentially affecting the fate of establishments disproportionately.</p>
+      <p>The overarching concern here isn&apos;t just about the presence of violations but rather about the potential inconsistencies in judgment, leading to varying outcomes for restaurants based on their cuisine type and business scale. Understanding these discrepancies is crucial in ensuring a fair and equitable inspection process that doesn&apos;t inadvertently disadvantage specific restaurant categories.</p>
+      <p><br></p>
+      <div class='tableauPlaceholder' id='viz1702016715842' style='position: relative; margin: 0 auto; width: 80%; max-width: 1000px;'>
+        <noscript>
+          <a href='#'>
+            <img alt='Shutdown Comparison' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Re&#47;RestaurantShutdowns&#47;ShutdownComparison&#47;1_rss.png' style='border: none;' />
+          </a>
+        </noscript>
+        <object class='tableauViz' style='display:none;' width='1000' height='827'> <!-- Updated width and height -->
+          <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+          <param name='embed_code_version' value='3' />
+          <param name='site_root' value='' />
+          <param name='name' value='RestaurantShutdowns&#47;ShutdownComparison' />
+          <param name='tabs' value='no' />
+          <param name='toolbar' value='yes' />
+          <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Re&#47;RestaurantShutdowns&#47;ShutdownComparison&#47;1.png' />
+          <param name='animate_transition' value='yes' />
+          <param name='display_static_image' value='yes' />
+          <param name='display_spinner' value='yes' />
+          <param name='display_overlay' value='yes' />
+          <param name='display_count' value='yes' />
+          <param name='language' value='en-US' />
+          <param name='filter' value='publish=yes' />
+        </object>
+      </div>
+      <!-- <script type='text/javascript'>
+        var divElement = document.getElementById('viz1702016715842');
+        var vizElement = divElement.getElementsByTagName('object')[0];
+        if (divElement.offsetWidth > 800) {
+          vizElement.style.width = '1000px';
+          vizElement.style.height = '827px';
+        } else if (divElement.offsetWidth > 500) {
+          vizElement.style.width = '1000px';
+          vizElement.style.height = '827px';
+        } else {
+          vizElement.style.width = '100%';
+          vizElement.style.height = '1777px';
+        }
+        var scriptElement = document.createElement('script');
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+      </script> -->
+    </section>
+  <section id="Viz3">
+    <p>The distinction in shut-down criteria between independent and chain restaurants within specific cuisines paints a revealing picture. Notably, independent American eateries and pizza parlors seemed to receive more leniency compared to their chain counterparts, while independent coffee shops and Chinese restaurants faced little room for error.</p>
+    <p>What stands out significantly is the startlingly high shut-down rate among Chinese restaurants, regardless of whether they operated independently or as part of a chain.</p>
+    <p>Considering the dataset&apos;s timeframe, it&apos;s crucial to acknowledge its commencement just before the onset of the 2020 COVID-19 pandemic&mdash;a period marked by escalating rates of anti-Asian hate incidents experienced by NYC residents. Assessing whether racial bias impacted the inspection process involves examining two objective violations: rodent presence and temperature control breaches for food safety (TCS rules). These violations encompass immediate health hazards, such as the existence of live rodents or their remnants, and improper handling or storage of animal-origin food items.</p>
+    <p>Across all cuisines, the incidence of violations surged notably from 2019 to 2023, yet the timing of these spikes varied among different cuisines. In 2020, Indian restaurants recorded an almost 400% increase in violations. However, a deeper inspection reveals this spike being attributed to a relatively small number of establishments. Contrarily, Italian and Korean restaurants witnessed a decline in violations in 2021, only to experience sharp upturns in 2022. A similar trend of increased violations was evident for American restaurants during the same year. Chinese restaurants, however, present a unique trend. In 2021, amid the pandemic, these restaurants encountered a staggering 177% surge in critical violations, with many of these issues detected in establishments previously free of violations. Unlike the scenario observed in Indian restaurants, a considerable number of new Chinese restaurants faced scrutiny. Although this pattern eventually extended to other cuisines, it appears that Chinese restaurants were subjected to heightened scrutiny at an earlier stage.</p>
+    <p>This observation raises concerns about whether these inspection trends were influenced by biases or targeted enforcement, particularly considering the broader socio-political context at that time. Understanding these patterns in violation occurrences among different cuisines provides critical insight into potential disparities in inspection practices that might have disproportionately affected specific restaurant categories.</p>
+    <p><br></p>
+      <div class='tableauPlaceholder' id='viz1702164625975' style='position: relative; margin: 0 auto; width: 80%; max-width: 1000px;'>
+        <noscript>
+          <a href='#'>
+            <img alt='Rats, Mice, Food ' src='https://public.tableau.com/static/images/CS/CS448BFinalProject/RatsMiceFood/1_rss.png' style='border: none' />
+          </a>
+        </noscript>
+        <object class='tableauViz' style='display:none;' width='1000' height='827'>
+          <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+          <param name='embed_code_version' value='3' />
+          <param name='site_root' value='' />
+          <param name='name' value='CS448BFinalProject/RatsMiceFood' />
+          <param name='tabs' value='no' />
+          <param name='toolbar' value='yes' />
+          <param name='static_image' value='https://public.tableau.com/static/images/CS/CS448BFinalProject/RatsMiceFood/1.png' />
+          <param name='animate_transition' value='yes' />
+          <param name='display_static_image' value='yes' />
+          <param name='display_spinner' value='yes' />
+          <param name='display_overlay' value='yes' />
+          <param name='display_count' value='yes' />
+          <param name='language' value='en-US' />
+          <param name='filter' value='publish=yes' />
+        </object>
+      </div>
+      <!-- <script type='text/javascript'>
+        var divElement = document.getElementById('viz1702164625975');
+        var vizElement = divElement.getElementsByTagName('object')[0];
+        if (divElement.offsetWidth > 800) {
+          vizElement.style.width='1000px';
+          vizElement.style.height='827px';
+        } else if (divElement.offsetWidth > 500) {
+          vizElement.style.width='1000px';
+          vizElement.style.height='827px';
+        } else {
+          vizElement.style.width='100%';
+          vizElement.style.height='1177px';
+        }
+        var scriptElement = document.createElement('script');
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+      </script>       -->
+       <p>The absence of a standardized approach in the inspection process poses a significant challenge in evaluating its fairness. Addressing the questions raised in this report becomes complex, as multiple plausible explanations could account for the observed patterns. Proving inspector bias is inherently difficult, and even if substantiated, rectifying it presents an equally challenging endeavor.</p>
+       <p>The repercussions of poor inspection grades and subsequent shut-downs wield immense power over a business. They can mar a restaurant&apos;s reputation and significantly impact its financial stability. Furthermore, unsanitary conditions within these establishments pose severe health risks to customers, potentially leading to life-threatening consequences.</p>
+       <p>Balancing these two consequential outcomes&mdash;the impact on businesses and the potential risks to public health&mdash;is a formidable task. Determining the appropriate equilibrium that ensures both fair treatment for businesses and robust health standards for consumers requires careful consideration and an approach that navigates the complexities of this multifaceted issue. Achieving a system that upholds fairness in evaluations while safeguarding public health remains a significant challenge.</p>
+
+       <p>Original Dataset:&nbsp;</span><a href="https://data.cityofnewyork.us/Health/DOHMH-New-York-City-Restaurant-Inspection-Results/43nn-pn8j"><u><span style="color:#1155cc;font-size:12pt;">NYC Open Data</span></u></a></p>
+    </section>
+    <div style="height: 200px;"></div>
+  <script src="app.js"></script>
+
+  <script>
+    function loadTableauViz() {
+      var script = document.createElement('script');
+      script.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+      document.body.appendChild(script);
+    }
+  
+    function loadViz(elementId, vizUrl, width, height) {
+      var placeholderDiv = document.getElementById(elementId);
+      var url = vizUrl.replace('http:', 'https:');
+      var options = {
+        hideTabs: true,
+        width: width,
+        height: height,
+        onFirstInteractive: function () {
+          console.log("Tableau viz loaded.");
+        }
+      };
+  
+      // Create the Tableau Viz object
+      var viz = new tableau.Viz(placeholderDiv, url, options);
+    }
+  
+    // Function to load visualizations when they come into view
+    function loadVisualizationsOnScroll() {
+      var viz1 = document.getElementById('viz1702072315872');
+      var viz2 = document.getElementById('viz1702016715842');
+      var viz3 = document.getElementById('viz1702164625975');
+  
+      if (isElementInViewport(viz1)) {
+        loadViz('viz1702072315872', 'https://public.tableau.com/views/borderline/borderline?:language=en-US&:display_count=n&:origin=viz_share_link', '1000px', '827px');
+      }
+      if (isElementInViewport(viz2)) {
+        loadViz('viz1702016715842', 'https://public.tableau.com/views/RestaurantShutdowns/ShutdownComparison?:language=en-US&:display_count=n&:origin=viz_share_link', '1000px', '827px');
+      }
+      if (isElementInViewport(viz3)) {
+        loadViz('viz1702164625975', 'https://public.tableau.com/views/CS448BFinalProject/RatsMiceFood?:language=en-US&:display_count=n&:origin=viz_share_link', '1000px', '827px');
+      }
+    }
+  
+    // Check if an element is in the viewport
+    function isElementInViewport(el) {
+      var rect = el.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+    }
+  
+    // Load visualizations on page load
+    window.addEventListener('load', function () {
+      loadTableauViz();
+      loadVisualizationsOnScroll();
+  
+      // Load visualizations when scrolled
+      window.addEventListener('scroll', function () {
+        loadVisualizationsOnScroll();
+      });
+    });
+  </script>
+</body>
+</html>
