@@ -83,23 +83,7 @@
           <param name='filter' value='publish=yes' />
         </object>
       </div>
-      <!-- <script type='text/javascript'>
-        var divElement = document.getElementById('viz1702072315872');
-        var vizElement = divElement.getElementsByTagName('object')[0];
-        if (divElement.offsetWidth > 800) {
-          vizElement.style.width = '1000px';
-          vizElement.style.height = '827px';
-        } else if (divElement.offsetWidth > 500) {
-          vizElement.style.width = '1000px';
-          vizElement.style.height = '827px';
-        } else {
-          vizElement.style.width = '100%';
-          vizElement.style.height = '1127px';
-        }
-        var scriptElement = document.createElement('script');
-        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-        vizElement.parentNode.insertBefore(scriptElement, vizElement);
-      </script> -->
+
     </section>
     <section id="Viz2">
       <p>Examining the impact of shut-downs by the NYC Department of Health and Mental Hygiene (NYC DOHMH) reveals significant implications for a restaurant&apos;s reputation and financial stability. While warranted for establishments posing health risks, the consistency in evaluation criteria across cuisines and business sizes warrants investigation.</p>
@@ -110,7 +94,7 @@
       <p>This disparity in shut-down thresholds and frequency between cuisines and business sizes sparks questions about potential biases or differing evaluation standards across different restaurant types. The implications of such variations could impact the fairness and consistency of inspections, potentially affecting the fate of establishments disproportionately.</p>
       <p>The overarching concern here isn&apos;t just about the presence of violations but rather about the potential inconsistencies in judgment, leading to varying outcomes for restaurants based on their cuisine type and business scale. Understanding these discrepancies is crucial in ensuring a fair and equitable inspection process that doesn&apos;t inadvertently disadvantage specific restaurant categories.</p>
       <p><br></p>
-      <!-- <div class='tableauPlaceholder' id='viz1702016715842' style='position: relative; margin: 0 auto; width: 80%; max-width: 1000px;'>
+      <div class='tableauPlaceholder' id='viz1702016715842' style='position: relative; margin: 0 auto; width: 80%; max-width: 1000px;'>
         <noscript>
           <a href='#'>
             <img alt='Shutdown Comparison' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Re&#47;RestaurantShutdowns&#47;ShutdownComparison&#47;1_rss.png' style='border: none;' />
@@ -132,24 +116,8 @@
           <param name='language' value='en-US' />
           <param name='filter' value='publish=yes' />
         </object>
-      </div> -->
-      <!-- <script type='text/javascript'>
-        var divElement = document.getElementById('viz1702016715842');
-        var vizElement = divElement.getElementsByTagName('object')[0];
-        if (divElement.offsetWidth > 800) {
-          vizElement.style.width = '1000px';
-          vizElement.style.height = '827px';
-        } else if (divElement.offsetWidth > 500) {
-          vizElement.style.width = '1000px';
-          vizElement.style.height = '827px';
-        } else {
-          vizElement.style.width = '100%';
-          vizElement.style.height = '1777px';
-        }
-        var scriptElement = document.createElement('script');
-        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-        vizElement.parentNode.insertBefore(scriptElement, vizElement);
-      </script> -->
+      </div>
+
     </section>
   <section id="Viz3">
     <p>The distinction in shut-down criteria between independent and chain restaurants within specific cuisines paints a revealing picture. Notably, independent American eateries and pizza parlors seemed to receive more leniency compared to their chain counterparts, while independent coffee shops and Chinese restaurants faced little room for error.</p>
@@ -181,23 +149,7 @@
           <param name='filter' value='publish=yes' />
         </object>
       </div>
-      <!-- <script type='text/javascript'>
-        var divElement = document.getElementById('viz1702164625975');
-        var vizElement = divElement.getElementsByTagName('object')[0];
-        if (divElement.offsetWidth > 800) {
-          vizElement.style.width='1000px';
-          vizElement.style.height='827px';
-        } else if (divElement.offsetWidth > 500) {
-          vizElement.style.width='1000px';
-          vizElement.style.height='827px';
-        } else {
-          vizElement.style.width='100%';
-          vizElement.style.height='1177px';
-        }
-        var scriptElement = document.createElement('script');
-        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-        vizElement.parentNode.insertBefore(scriptElement, vizElement);
-      </script>       -->
+
        <p>The absence of a standardized approach in the inspection process poses a significant challenge in evaluating its fairness. Addressing the questions raised in this report becomes complex, as multiple plausible explanations could account for the observed patterns. Proving inspector bias is inherently difficult, and even if substantiated, rectifying it presents an equally challenging endeavor.</p>
        <p>The repercussions of poor inspection grades and subsequent shut-downs wield immense power over a business. They can mar a restaurant&apos;s reputation and significantly impact its financial stability. Furthermore, unsanitary conditions within these establishments pose severe health risks to customers, potentially leading to life-threatening consequences.</p>
        <p>Balancing these two consequential outcomes&mdash;the impact on businesses and the potential risks to public health&mdash;is a formidable task. Determining the appropriate equilibrium that ensures both fair treatment for businesses and robust health standards for consumers requires careful consideration and an approach that navigates the complexities of this multifaceted issue. Achieving a system that upholds fairness in evaluations while safeguarding public health remains a significant challenge.</p>
@@ -226,11 +178,11 @@
         }
       };
   
-      // Create the Tableau Viz object
+      // Create Tableau object
       var viz = new tableau.Viz(placeholderDiv, url, options);
     }
   
-    // Function to load visualizations when they come into view
+    // load visualizations
     function loadVisualizationsOnScroll() {
       var viz1 = document.getElementById('viz1702072315872');
       var viz2 = document.getElementById('viz1702016715842');
@@ -247,7 +199,7 @@
       }
     }
   
-    // Check if an element is in the viewport
+    // check to see if need to be loaded
     function isElementInViewport(el) {
       var rect = el.getBoundingClientRect();
       return (
